@@ -4,14 +4,14 @@
 2. mkdir test_out (if not exist)
 3. SAUCE_USERNAME='username' SAUCE_API_KEY='key' cucumber features/Tests.feature:10
 
-All settings inside env.rb 
+All settings inside env.rb
 5. Set server to :remote(for SAUSELAB) or :local (to run tests locally)
 
 SERVER = (ENV['SERVER'] || :local).to_sym
 
- 6. Set browser to :chrome, :firefox if SERVER == local
-    Set browser to :chrome_windows, :chrome, :firefox if if server == remote
-		
+6. Set browser to :chrome, :firefox if SERVER == local
+   Set browser to :chrome_windows, :chrome, :firefox if if server == remote
+
 BROWSER = (ENV['BROWSER'] || :chrome).to_sym
 
 7. You can add more cap do the method, or you modify current list of caps
@@ -26,4 +26,4 @@ def browser_caps
     return { :platform => "Mac OS X 10.10.5", :browserName => "Firefox", :version => "48" }
   end
 end
- 
+
