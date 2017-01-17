@@ -1,42 +1,40 @@
-require 'factory_girl'
-require_relative 'setup'
-require_relative 'configuration'
-require 'site_prism'
-require_relative 'bucket'
-require 'capybara-screenshot/cucumber'
-require_relative '../../lib/logger/sparklog'
-require_relative '../../lib/pom/page'
-require_relative 'assertions'
-require 'pry'
-require 'active_support'
-require 'benchmark'
+require "selenium-webdriver"
+require "rspec"
+require "pry"
 
-#Creating a logfile and making it accessable through the framework
-$logger = Applog.new("application#{ENV['TEST_ENV_NUMBER']}.log")
-#Retrieving the main setup interface with current configurations
-c = Configuration.new
-$setup = SetUp.new(c)
+require File.join(File.dirname(__FILE__),"..", "page_model", "page_actions.rb")
 
+SAUCE_USERNAME = (ENV['SAUCE_USERNAME'])
+SAUCE_API_KEY = (ENV['SAUCE_API_KEY'])
 
-#Requiring factories, so they are available in steps like 'FactoryGirl.create(:user)'
-World(FactoryGirl::Syntax::Methods)
-$setup.load_factories
-#Loading Bucket module which is meant to contain some functions that you want to add , but probably
-#not going to use that often
-World(Bucket)
+BASE_URL = (ENV['BASE_URL'] || "http://the-internet.herokuapp.com")
 
-#Cleaning up old tests results
-$setup.cleanup_testout
-$setup.set_default_max_wait_time(5)
-#Loading page objects so they are accessible in steps
-$setup.load_page_objects
-$setup.load_errors
+# Set server to :remote or :local
+SERVER = (ENV['SERVER'] || :local).to_sym
+# Set browser to :chrome, :firefox if server == local
+# Set browser to :chrome_windows, :chrome, :firefox if if server == remote
 
-#This meant to register drivers, setup all necessary configs
+BROWSER = (ENV['BROWSER'] || :chrome).to_sym
+DEFAULT_TIMEOUT = 30
 
-$setup.prepare_system
-
-def app
-  $logger.info "Instantiating App Class"
-  PageObjects::MainApplication.new
+def application
+  Application.new @browser
 end
+
+def take_screenshot file_name
+  @browser.save_screenshot "features/screenshots/#{file_name}"
+end
+
+# You can change cap's value, list of avaliable values
+# https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
+def browser_caps
+  if BROWSER == :chrome_windows
+    return { :platform => "Windows 7", :browserName => "Chrome", :version => "45" }
+  elsif BROWSER == :chrome
+    return { :platform => "Mac OS X 10.9", :browserName => "Chrome", :version => "31"  }
+  elsif BROWSER == :firefox
+    return { :platform => "Mac OS X 10.10.5", :browserName => "Firefox", :version => "48" }
+  end
+end
+
+

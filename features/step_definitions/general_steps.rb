@@ -1,21 +1,25 @@
-And(/^I go to my "([^"]*)" page$/) do |page|
-  pagename = format_to_page(page)
-  @current_page = app.send(pagename)
-
-  if page == 'Basic Auth'
-    @current_page.login(@main_user)
-  else
-    @current_page.load
-  end
-
-  $logger.info "Initialized #{pagename} page"
+Given(/^I go to home page$/) do
+  application.home_page.navigate
 end
 
-Then(/^I (should|shouldn't) see the "([^"]*)" message$/) do |opt, message|
-  if opt == "shouldn't"
-    expect(@current_page.has_content?(message)).to be_falsy
-  else
-    expect(@current_page.message.text).to eq(message)
-  end
+Given(/^I go to abtest page$/) do
+  application.abtest_page.navigate
+end
 
+When(/^I changed cookie$/) do
+  @browser.manage.add_cookie(name: 'optimizelyOptOut', value: 'true')
+end
+
+And(/^I refresh page$/) do
+  @browser.navigate.refresh
+end
+
+And(/^I should see "([^"]*)" or "([^"]*)" headline$/) do |arg1, arg2|
+  heading_text = @browser.find_element(css: 'h3').text
+  expect([arg1, arg2].include? heading_text).to eql true
+end
+
+Then(/^I should see "([^"]*)" headline$/) do |arg|
+  heading_text = @browser.find_element(css: 'h3').text
+  expect(heading_text.include? arg).to eql true
 end
