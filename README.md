@@ -5,16 +5,18 @@
 3. SAUCE_USERNAME='username' SAUCE_API_KEY='key' cucumber features/Tests.feature:10
 
 All settings inside env.rb 
+5. Set server to :remote(for SAUSELAB) or :local (to run tests locally)
 
-  - Set server to :remote(for SAUSELAB) or :local (to run tests locally)
 SERVER = (ENV['SERVER'] || :local).to_sym
 
-  - Set browser to :chrome, :firefox if SERVER == local
-  - Set browser to :chrome_windows, :chrome, :firefox if if server == remote
+ 6. Set browser to :chrome, :firefox if SERVER == local
+    Set browser to :chrome_windows, :chrome, :firefox if if server == remote
+		
 BROWSER = (ENV['BROWSER'] || :chrome).to_sym
 
-- You can add more cap do the method, or you modify current list of caps
-- About browser_caps: https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
+7. You can add more cap do the method, or you modify current list of caps
+   About browser_caps: https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
+
 def browser_caps
   if BROWSER == :chrome_windows
     return { :platform => "Windows 7", :browserName => "Chrome", :version => "45" }
