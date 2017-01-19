@@ -31,7 +31,7 @@ def browser_caps
   if BROWSER == :chrome_windows
     return { :platform => "Windows 7", :browserName => "Chrome", :version => "45" }
   elsif BROWSER == :chrome
-    return { :platform => "Mac OS X 10.9", :browserName => "Chrome", :version => "31"  }
+    return { :platform => "Mac OS X 10.12.2", :browserName => "Chrome", :version => "55"}
   elsif BROWSER == :firefox
     return { :platform => "Mac OS X 10.10.5", :browserName => "Firefox", :version => "48" }
   end

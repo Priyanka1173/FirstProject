@@ -1,7 +1,7 @@
 
 Before do
-  if SERVER == :local
-    @browser = Selenium::WebDriver.for BROWSER
+  if SERVER == :local && BROWSER == :chrome
+    @browser = Selenium::WebDriver.for BROWSER, driver_path: "/Users/idorovskikh/ba_qa_repos/CucumberWeb/drivers/chromedriver"
     @browser.manage.window.maximize
   end
 
