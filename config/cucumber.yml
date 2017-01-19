@@ -1,4 +1,0 @@
-# config/cucumber.yml ##YAML Template --- 
-default: --format html --out test_out/report<%= ENV['TEST_ENV_NUMBER'] %>.html --format junit --out test_out --format pretty --format json --out test_out/report<%= ENV['TEST_ENV_NUMBER'] %>.json
-parallel: --format ParallelTests::Cucumber::FailuresLogger --out rerun.txt --format html --out test_out/report<%= ENV['TEST_ENV_NUMBER'] %>.html --format junit --out test_out --format pretty --format json --out test_out/report<%= ENV['TEST_ENV_NUMBER'] %>.json
-
