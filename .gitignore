@@ -1,8 +1,4 @@
 *.swp
 .DS_Store
 .idea
-test_out/*
-!test_out/folderholder
-application*.log
-configuration.yml
-rerun.txt
+report.html

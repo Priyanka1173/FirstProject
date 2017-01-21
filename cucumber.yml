@@ -1,0 +1,4 @@
+login_tests: --format html --out report.html --format pretty --tags @login
+dropdown_tests: --format html --out report.html --format pretty --tags @dropdown
+acceptance_suite: --format html --out report.html --format pretty --tags @acceptance
+
