@@ -6,6 +6,12 @@ Feature: Selecting from a Dropdown
 
   @acceptance
   Scenario: select option one from dropdown
-    Then I move to "dropdown" page
+    Given I move to "dropdown" page
     When I select "Option 1" from dropdown
     Then I should see the "Option 1" selected
+
+  @acceptance
+  Scenario: select option two from dropdown
+    Given I move to "dropdown" page
+    When I select "Option 2" from dropdown
+    Then I should see the "Option 2" selected
