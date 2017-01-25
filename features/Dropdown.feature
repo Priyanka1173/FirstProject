@@ -5,13 +5,15 @@ Feature: Selecting from a Dropdown
   While it sounds pretty straightforward, there is a bit more finesse to it.
 
   @acceptance
-  Scenario: select option one from dropdown
+  Scenario Outline: select options from dropdown
     Given I move to "dropdown" page
-    When I select "Option 1" from dropdown
-    Then I should see the "Option 1" selected
+    When I select "<option>" from dropdown
+    Then I should see the "<option>" selected
 
-  @acceptance
-  Scenario: select option two from dropdown
-    Given I move to "dropdown" page
-    When I select "Option 2" from dropdown
-    Then I should see the "Option 2" selected
+    Examples: options from dropdown menu
+
+    |option  |
+    |Option 1|
+    |Option 2|
+
+
