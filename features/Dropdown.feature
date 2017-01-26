@@ -11,7 +11,6 @@ Feature: Selecting from a Dropdown
     Then I should see the "<option>" selected
 
     Examples: options from dropdown menu
-
     |option  |
     |Option 1|
     |Option 2|
