@@ -13,6 +13,7 @@ Before do
 
   @basic_auth = BasicAuth.new @browser
   @dropdown = Dropdown.new @browser
+  @checkboxes = Checkboxes.new @browser
 end
 
 After do

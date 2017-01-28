@@ -1,3 +1,4 @@
 login_tests: --format html --out login.html --format pretty --tags @login
 dropdown_test: --format html --out dropdown.html --format pretty --tags @dropdown
-acceptance: --format html --out acceptance.html --format pretty --tags @acceptance
+acceptance_tests: --format html --out acceptance.html --format pretty --tags @acceptance
+checkboxes_tests: --format html --out acceptance.html --format pretty --tags @checkboxes
