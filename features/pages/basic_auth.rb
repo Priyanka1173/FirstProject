@@ -1,9 +1,5 @@
-class BasicAuth
+class BasicAuth < PageActions
   SUCCESS_MESSAGE = { css: '.example p' }
-
-  def initialize(browser)
-    @browser = browser
-  end
 
   def with(username, password)
     url = "http://#{username}:#{password}@the-internet.herokuapp.com/basic_auth"
@@ -13,4 +9,5 @@ class BasicAuth
   def success_message
     @browser.find_element(SUCCESS_MESSAGE)
   end
+
 end

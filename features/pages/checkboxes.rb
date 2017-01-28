@@ -1,12 +1,8 @@
-class Checkboxes
+class Checkboxes < PageActions
   CHECKBOXES = {css: 'input[type="checkbox"]'}
 
-  def initialize(browser)
-    @browser = browser
-  end
-
-  def visit page
-    @browser.get "http://the-internet.herokuapp.com/#{page}"
+  def path relative_page
+    "http://the-internet.herokuapp.com/checkboxes"
   end
 
   def is_checked? index

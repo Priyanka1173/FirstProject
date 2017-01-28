@@ -1,12 +1,8 @@
-class Dropdown
+class Dropdown < PageActions
   DROPDOWN_ELEMENT = {id: 'dropdown'}
 
-  def initialize(browser)
-    @browser = browser
-  end
-
-  def visit page
-    @browser.get "http://the-internet.herokuapp.com/#{page}"
+  def path relative_page
+    "http://the-internet.herokuapp.com/dropdown"
   end
 
   def select option
@@ -16,7 +12,8 @@ class Dropdown
   end
 
   def selected_option
-    @select_list.selected_options[0].text
+    @select_list.selected_options.each{|option| p option.text}
+    @select_list.selected_options.first.text
   end
 
 end
