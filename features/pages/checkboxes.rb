@@ -1,7 +1,7 @@
 class Checkboxes < PageActions
   CHECKBOXES = {css: 'input[type="checkbox"]'}
 
-  def path relative_page
+  def path
     "http://the-internet.herokuapp.com/checkboxes"
   end
 

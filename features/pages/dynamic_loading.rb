@@ -2,8 +2,8 @@ class DynamicLoading < PageActions
   START_BUTTON = {css: '#start button'}
   FINISH_ELEMENT = {css: '#finish'}
 
-  def path relative_page
-    "http://the-internet.herokuapp.com/dynamic_loading#{relative_page}"
+  def path
+    "http://the-internet.herokuapp.com/dynamic_loading/1"
   end
 
   def start_button

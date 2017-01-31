@@ -3,8 +3,8 @@ class PageActions
     @browser = browser
   end
 
-  def visit (relative_page = nil)
-    @browser.navigate.to self.path relative_page
+  def visit
+    @browser.navigate.to self.path
   end
 
   def wait_for (seconds)

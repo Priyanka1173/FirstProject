@@ -4,12 +4,7 @@ Feature: Dynamic Loading
   Just grab the list by it's element and select an item within it based on the text you want.
   While it sounds pretty straightforward, there is a bit more finesse to it.
 
-  Scenario Outline: select options from dropdown
-    Given I move to "dynamic_loading" page with "<page>"
+  Scenario: select options from dropdown
+    Given I move to "dynamic_loading" page
     When I clink on start button
     Then "Hello World!" message is displayed
-
-    Examples:
-    |page|
-    |/1  |
-    |/2  |
