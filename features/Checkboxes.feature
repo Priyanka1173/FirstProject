@@ -1,4 +1,4 @@
-@checkboxes
+@checkboxes @acceptance
 Feature: Checkboxes
   The Problem
 
