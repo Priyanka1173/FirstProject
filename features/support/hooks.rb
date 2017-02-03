@@ -14,7 +14,6 @@ Before do
   @dropdown = Dropdown.new @browser
   @checkboxes = Checkboxes.new @browser
   @dynamic_loading = DynamicLoading.new @browser
-  @tinymce = Tinymce.new @browser
 end
 
 After do |scenario|
