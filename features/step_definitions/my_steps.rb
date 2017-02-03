@@ -19,7 +19,7 @@ Then(/^I should see the "([^"]*)" selected$/) do |expected_selected_option|
   expect(actual_selected_option).to eql expected_selected_option
 end
 
-Then(/^I check if 2(st|nd|rd|th) box is selected$/) do |index|
+Then(/^I check if (\d*)(?:st|nd|rd|th) box is selected$/) do |index|
   # TODO: read about equality matchers
   # https://www.relishapp.com/rspec/rspec-expectations/v/2-2/docs/matchers/equality-matchers
   expect(@checkboxes.is_checked? index).to eql true
