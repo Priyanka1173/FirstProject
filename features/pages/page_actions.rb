@@ -1,4 +1,4 @@
-class PageActions
+module PageActions
 
   def initialize(browser)
     @browser = browser

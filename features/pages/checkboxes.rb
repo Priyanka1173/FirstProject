@@ -1,4 +1,6 @@
-class Checkboxes < PageActions
+class Checkboxes
+  include PageActions
+
   CHECKBOXES = {css: 'input[type="checkbox"]'}
 
   def path

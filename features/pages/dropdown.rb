@@ -1,4 +1,6 @@
-class Dropdown < PageActions
+class Dropdown
+  include PageActions
+
   DROPDOWN_ELEMENT = {id: 'dropdown'}
 
   def path
