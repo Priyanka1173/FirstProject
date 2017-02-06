@@ -1,5 +1,4 @@
-class Tinymce
-  include PageActions
+class Tinymce < PageActions
 
   EDITOR = {id: 'tinymce'}
   PAGE_TITLE = {css: 'h3'}

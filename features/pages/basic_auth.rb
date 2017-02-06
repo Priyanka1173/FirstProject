@@ -1,5 +1,4 @@
-class BasicAuth
-  include PageActions
+class BasicAuth < PageActions
 
   SUCCESS_MESSAGE = { css: '.example p' }
 

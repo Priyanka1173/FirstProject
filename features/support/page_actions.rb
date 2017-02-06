@@ -1,7 +1,12 @@
-module PageActions
+class PageActions
 
   def initialize(browser)
     @browser = browser
+  end
+
+
+  def self.inherited(klass)
+    Site.register_page_object(klass)
   end
 
   def visit path = nil

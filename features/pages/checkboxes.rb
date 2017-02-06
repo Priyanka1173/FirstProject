@@ -1,5 +1,4 @@
-class Checkboxes
-  include PageActions
+class Checkboxes < PageActions
 
   CHECKBOXES = {css: 'input[type="checkbox"]'}
 

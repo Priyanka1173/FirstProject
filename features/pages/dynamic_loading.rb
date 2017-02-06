@@ -1,5 +1,4 @@
-class DynamicLoading
-  include PageActions
+class DynamicLoading < PageActions
 
   START_BUTTON = {css: '#start button'}
   FINISH_ELEMENT = {css: '#finish'}
