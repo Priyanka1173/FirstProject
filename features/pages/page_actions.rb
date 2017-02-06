@@ -3,8 +3,18 @@ class PageActions
     @browser = browser
   end
 
-  def visit
-    @browser.navigate.to self.path
+  def visit path = nil
+    page = self.path
+
+    if path.nil? || path.first.nil?
+      page
+    else
+      page = page + path.first
+    end
+
+    new_url = URI::HTTP.build({:host => $base_url, :path => page})
+    puts new_url
+    @browser.navigate.to new_url
   end
 
   def wait_for (seconds)

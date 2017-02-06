@@ -6,7 +6,12 @@ Feature: Dynamic Loading
   There are two examples. One in which an element already exists on the page but it is not displayed.
   Another case where the element is not on the page and gets added in.
 
-  Scenario: select options from dropdown
-    Given I move to "dynamic_loading" page
+  Scenario Outline: select options from dropdown
+    Given I move to "dynamic_loading" page "<pages>"
     When I clink on start button
     Then "Hello World!" message is displayed
+
+    Examples:
+    |pages|
+    | /1  |
+    | /2  |

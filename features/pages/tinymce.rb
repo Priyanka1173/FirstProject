@@ -4,7 +4,7 @@ class Tinymce < PageActions
   PAGE_TITLE = {css: 'h3'}
 
   def path
-    "http://the-internet.herokuapp.com/tinymce"
+    "/tinymce"
   end
 
   def editor

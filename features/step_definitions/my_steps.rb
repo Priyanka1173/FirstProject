@@ -6,8 +6,8 @@ Then(/^I should see the "([^"]*)" message$/) do |message|
   expect(@basic_auth.success_message.text).to eq(message)
 end
 
-When(/^I move to "([^"]*)" page$/) do |page|
-  instance_variable_get("@#{page}").visit
+When(/^I move to "([^"]*)" page(?: "([^"]*)")?$/) do |page, *path|
+  instance_variable_get("@#{page}").visit path
 end
 
 Then(/^I select "([^"]*)" from dropdown$/) do |option|

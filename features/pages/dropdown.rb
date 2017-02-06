@@ -2,7 +2,7 @@ class Dropdown < PageActions
   DROPDOWN_ELEMENT = {id: 'dropdown'}
 
   def path
-    "http://the-internet.herokuapp.com/dropdown"
+    "/dropdown"
   end
 
   def select option
