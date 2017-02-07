@@ -4,11 +4,17 @@ class PageActions
     @browser = browser
   end
 
-  def visit path = nil
+  def visit  path = nil
     puts "Path variable is actually +++++#{path.class}"
+    puts path
+
     page = self.path
+    puts page
+
     page += path.first unless path.first.nil?
-    new_url = URI::HTTP.build({:host => $base_url, :path => page})
+
+    new_url = URI::HTTP.build({:host => $base_url, :path => page })
+
     puts new_url
     @browser.navigate.to new_url
   end
