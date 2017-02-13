@@ -1,5 +1,6 @@
 /screenshots
+/test_out/html_reports/*
+/test_out/junit_reports/*
 *.swp
 .DS_Store
 .idea
-*.html
