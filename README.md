@@ -12,3 +12,7 @@ run locally:
  SERVER="remote" cucumber -t @tag_name
  SERVER="remote" cucumber features/Login.feature:5
  SERVER="remote" -p profile_name
+
+create folders once:
+/test_out/html_reports
+/test_out/junit_reports
