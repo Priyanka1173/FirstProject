@@ -9,6 +9,6 @@ run all test on sause lab:
 run locally:
  as usual (by tag, by profile), ex:
 
- SERVER="remote" cucumber -t @tag_name
- SERVER="remote" cucumber features/Login.feature:5
- SERVER="remote" -p profile_name
+ SERVER="local" cucumber -t @tag_name
+ SERVER="local" cucumber features/Login.feature:5
+ SERVER="local" -p profile_name
